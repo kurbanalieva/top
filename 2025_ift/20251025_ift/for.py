@@ -1,103 +1,58 @@
-# 1. Все четные числа от 0 до 1000
-print("Четные числа:")
-for num in range(0, 1001, 2):
-    print(num, end=' ')
-print("\n")
+#Запросить у пользователя число.
+k = input('чесло: ')
+k = int(k)
+if k % 2 == 0:#(Оператор % — это остаток от деления.
 
-# 2. Все нечетные числа от 0 до 1000
-print("Нечетные числа:")
-for num in range(1, 1001, 2):
-    print(num, end=' ')
-print("\n")
+#number % 2 вычисляет остаток от деления числа на 2.
 
-# 3. Числа с цифрой 3
-print("Числа с цифрой 3:")
-for num in range(0, 1001):
-    if '3' in str(num):
-        print(num, end=' ')
-print("\n")
+#Примеры:
 
-# 4 
-print("Трехзначные числа, кончающиеся на 7:")
-for num in range(100, 1000):
-    if num % 10 == 7:  # проверяем последнюю цифру
-        print(num, end=' ')
-print("\n")
+#4 % 2 → 0 (остаток 0 → чётное);
 
-print('5 не смогла')
-print("\n")
+#5 % 2 → 1 (остаток 1 → нечётное).)
 
-# 6. Трехзначные числа без нуля
-print("Трехзначные числа без нуля:")
-for num in range(100, 1000):
-    if '0' not in str(num):
-        print(num, end=' ')
-print("\n")
+    #Вывести «Чётное», если число делится на 2,
+    print('чет')
+else:
+    #иначе — «Нечётное».
 
-print('6 не смогла')
-print("\n")
+    print('нечет:')
+print('\n')
 
-print('7 не смогла')
-print("\n")
+print('#2')
 
-text = "мама мыла раму"
-# Переворачиваем всю строку
-letter = text[::-1]
-print("Строка в обратном порядке букв:")
-print(letter)
-print("\n")
-
-# 1 вариант
-for num in range(77, 778, 2):
-    print(num, end=' ')
+l = input('ch: ')
+l = int(l)
+o = input('ch:')
+o = int(o)
+print(l*o)
+print('\n')
 
 
-start = 77
-end = 777
-step = 2
-print("\n")
+# Проверка формата
+if ':' not in timeinput or len(timeinput.split(':')) != 2:
+    print('Ошибка: введите время в формате ЧЧ:ММ (например, 16:55)')
+else:
+    hours, minutes = timeinput.split(':')
+    hour = int(hours)
+    minute = int(minutes)
 
-# Проверяем, чтобы начальное число было нечётным
-if start % 2 == 0:
-    start += 1
+   # Проверяем корректность времени
+    if hour < 0 or hour > 23 or minute < 0 or minute > 59:
+        print('Ошибка: введите время от 00:00 до 23:59')
+    else:
+        # Определяем время суток по часам 
+            time_of_day = 'утро'
+            greeting = 'Доброе утро!'
+        elif 12 <= hour < 17:
+            time_of_day = 'день'
+            greeting = 'Добрый день!'
+        elif 17 <= hour < 21:
+            time_of_day = 'вечер'
+            greeting = 'Добрый вечер!'
+        else:  # 21–4 часа
+            time_of_day = 'ночь'
+            greeting = 'Спокойной ночи!'
 
-for num in range(start, end + 1, step):
-    print(num, end=' ')
-print("\n")
-
-# Получаем ввод от пользователя
-start = int(input("Введите начальное число: "))
-end = int(input("Введите конечное число: "))
-
-print("\n")
-# Корректируем начальное число, если оно чётное
-if start % 2 == 0:
-    start += 1
-print("\n")
-
-# Выводим нечётные числа
-for num in range(start, end + 1, 2):
-    print(num, end=' ')
-
-text = "Пример текста для демонстрации"
-0
-
-# Выводим каждый третий символ
-result = text[::3]
-print("\nКаждый третий символ:", result)
-
-
-text = "Пример текста для демонстрации работы со словами"
-words = text.split()
-
-# Способ 1: срез списка
-last_three_words = words[-3:]
-print("\nТри последних слова (способ 1):", ' '.join(last_three_words))
-
-
-# Способ 2: range
-last_three_words = []
-for i in range(len(words) - 3, len(words)):
-    last_three_words.append(words[i])
-
-print("Три последних слова (способ 2):", ' '.join(last_three_words))
+        # Формируем ответ
+        print(f'О, уже {time_of_day}! {greeting}')
