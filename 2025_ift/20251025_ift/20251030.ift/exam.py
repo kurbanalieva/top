@@ -57,13 +57,3 @@ day = int(day)
 #Спрашиваем у  пользователя месяц день его рождения
 month = input('месяц вашего дня рождения?: ')
 month = int(month)
-# Текущая дата
-current_month = 10
-current_day = 30
-
-if month < current_month:
-    ckol = (current_month - month)
-elif day < current_day:
-    
-
-
